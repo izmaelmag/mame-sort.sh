@@ -28,7 +28,7 @@ chmod +x mame-sort.sh
 Basic invocation:
 
 ```bash
-./mame-sort.sh -l gameslist-1.txt -i roms -o games-1
+./mame-sort.sh -l gameslist-1.txt -r roms -o games-1
 ```
 
 ### Arguments
@@ -36,7 +36,7 @@ Basic invocation:
 - `--list <file>` (shortcut `-l`)
   Path to the text file containing ROM codes, one per line. **Required**.
 
-- `--input <dir>` (shortcut `-i`)
+- `--roms <dir>` (shortcut `-r`)
   Directory that contains the source MAME ROM archives (*.zip). **Required**.
 
 - `--output <dir>` (shortcut `-o`)
@@ -44,7 +44,7 @@ Basic invocation:
   > If it does not exist, it will be created automatically. 
 
 - `--clean` or `-c`
-  Optional flag. If present, the script deletes the original ROMs found in `--input` and the original list file after successful copying.
+  Optional flag. If present, the script deletes the original ROMs found in `--roms` and the original list file after successful copying.
 
 All options except `-c` or `--clean` are mandatory; unknown options cause the script to exit with an error.
 
@@ -53,18 +53,18 @@ All options except `-c` or `--clean` are mandatory; unknown options cause the sc
 Create a collection without touching the original ROMs:
 
 ```bash
-./mame-sorter.sh \
+./mame-sort.sh \
   --list lists/shmups.txt \
-  --input roms/mame \
+  --roms roms/mame \
   --output collections/shmups
 ```
 
 Create a collection and remove the originals (dangerous — use with care):
 
 ```bash
-./mame-sorter.sh \
+./mame-sort.sh \
   -l lists/favorites.txt \
-  -i roms/mame \
+  -r roms/mame \
   -o collections/favorites \
   -c
 ```

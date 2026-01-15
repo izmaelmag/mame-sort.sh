@@ -15,7 +15,7 @@ while [[ $# -gt 0 ]]; do
             LIST_FILE="$2"
             shift 2
             ;;
-        -i|--input)
+        -r|--roms)
             INPUT_DIR="$2"
             shift 2
             ;;
@@ -41,7 +41,7 @@ if [[ -z "$LIST_FILE" ]]; then
 fi
 
 if [[ -z "$INPUT_DIR" ]]; then
-    echo "Error: -i / --input parameter is required"
+    echo "Error: -r / --roms parameter is required"
     exit 1
 fi
 
