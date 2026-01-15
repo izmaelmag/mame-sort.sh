@@ -19,8 +19,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/izmaelmag/mame-sort.sh.git
-cd mame-sort.sh
+curl -L https://raw.githubusercontent.com/izmaelmag/mame-sort.sh/main/mame-sort.sh -o mame-sort.sh
 chmod +x mame-sort.sh
 ```
 
@@ -29,7 +28,7 @@ chmod +x mame-sort.sh
 Basic invocation:
 
 ```bash
-./mame-sort.sh -l gameslist-1.txt -i ./roms -o ./games-1
+./mame-sort.sh -l gameslist-1.txt -i roms -o games-1
 ```
 
 ### Arguments
@@ -55,18 +54,18 @@ Create a collection without touching the original ROMs:
 
 ```bash
 ./mame-sorter.sh \
-  --list ./lists/shmups.txt \
-  --input ./roms/mame \
-  --output ./collections/shmups
+  --list lists/shmups.txt \
+  --input roms/mame \
+  --output collections/shmups
 ```
 
 Create a collection and remove the originals (dangerous — use with care):
 
 ```bash
 ./mame-sorter.sh \
-  -l ./lists/favorites.txt \
-  -i ./roms/mame \
-  -o ./collections/favorites \
+  -l lists/favorites.txt \
+  -i roms/mame \
+  -o collections/favorites \
   -c
 ```
 
